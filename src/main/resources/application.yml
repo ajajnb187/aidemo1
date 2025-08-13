@@ -1,0 +1,35 @@
+# 应用配置说明：
+# - spring.ai.ollama.*：Spring AI 对接本地 Ollama 服务的基础配置；
+# - deepseek.*：调用 DeepSeek 官方 API 所需的地址与密钥（请勿将真实密钥提交到版本库）；
+# - ragflow.*：调用 RagFlow 服务的 API 地址与密钥（请替换为你自己的环境）。
+#
+# 安全提示：
+# - 强烈建议使用环境变量或外部化配置（如 application-local.yml + .gitignore）管理密钥；
+# - 生产环境务必不要将真实 key 写入仓库。
+
+spring:
+  ai:
+    ollama:
+      # 本地 Ollama 服务的地址
+      base-url: http://localhost:11434
+      chat:
+        # 默认模型名称（需与你在 Ollama 拉取/注册的模型一致）
+        model: deepseek-r1:1.5b
+
+# DeepSeek API配置（示例值，实际请用环境变量或外部配置覆盖）
+# deepseek:
+#   api-key: ${DEEPSEEK_API_KEY}
+#   base-url: ${DEEPSEEK_BASE_URL:https://api.deepseek.com}
+
+deepseek:
+  api-key: sk-7349e9a4f24942ac951485f9483850ba
+  base-url: "https://api.deepseek.com"
+
+# RagFlow 接口配置（示例值）
+# ragflow:
+#   api-url: ${RAGFLOW_API_URL}
+#   api-key: ${RAGFLOW_API_KEY}
+
+ragflow:
+  api-url: "http://172.26.128.1:9202/api/v1/chats/dd27fb1a714511f082656ea9e04d5c86/completions"
+  api-key: ragflow-BmYTkxZjIyNzE1NzExZjBiNDQyMTIxYz
