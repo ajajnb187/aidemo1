@@ -1,0 +1,13 @@
+
+spring:
+
+  application:
+
+    name: tool-mcp
+
+  profiles:
+      active: sse
+
+server:
+
+  port: 8881

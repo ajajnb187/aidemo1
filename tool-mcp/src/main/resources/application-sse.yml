@@ -1,0 +1,15 @@
+# SSE模式配置文件
+spring:
+  ai:
+    mcp:
+      server:
+        # MCP服务名称，与应用名保持一致
+        name: tool-mcp
+        # MCP服务版本号
+        version: 0.0.1
+        # 服务类型：SYNC表示同步处理请求
+        # 另一种选项是STREAMING，用于流式响应
+        type: SYNC
+        # stdio配置为false表示不使用标准输入输出模式
+        # 而是使用HTTP/SSE方式提供服务
+        stdio: false
